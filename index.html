@@ -1,0 +1,42 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Solid state tech test</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script src="node_modules/vue/dist/vue.js"> </script>
+    <script src="app.js"></script>
+</head>
+<body>
+
+<header>
+        <h1>tech test</h1>
+
+</header>
+
+<div id="app">
+
+   search films by the company:
+
+
+        <input v-model="searchQuery" type="text" />
+
+    <ul>
+        <li v-for=" film in films | orderBy 'name'| filterBy searchQuery in 'company'">
+
+
+                 <h1>{{ film.name }}</h1>
+
+                 <a v-bind:href="film.url">link to film</a> -
+
+                 <img v-bind:src="film.image"> -
+
+                <h3>{{ film.company }}</h3>
+
+        </li>
+    </ul>
+</div>
+
+
+
+</body>
+</html>
